@@ -1,0 +1,175 @@
+ #include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+   double degrees, radians;
+   
+   //Pedir al usuario el valor en grados
+   cout << "Ingrese el valor en grados: ";
+   cin >> degrees;
+   
+   //Convertir de grados a radianes
+   radians = degrees * M_PI / 180;
+   
+   //Mostrar el resultado en radianes
+   cout << degrees << " grados = " << radians << " radianes" << endl;
+   
+   return 0;
+}
+Grados a radianes
+ #include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    double x1, y1, x2, y2, distancia;
+
+    cout << "Ingrese la coordenada x del primer punto: ";
+    cin >> x1;
+    cout << "Ingrese la coordenada y del primer punto: ";
+    cin >> y1;
+    cout << "Ingrese la coordenada x del segundo punto: ";
+    cin >> x2;
+    cout << "Ingrese la coordenada y del segundo punto: ";
+    cin >> y2;
+
+    distancia = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+
+    cout << "La distancia entre los puntos es: " << distancia << endl;
+
+    return 0;
+}
+ #include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double x, y, r, theta;
+
+    // Pedir al usuario las coordenadas rectangulares
+    cout << "Ingrese la coordenada x: ";
+    cin >> x;
+    cout << "Ingrese la coordenada y: ";
+    cin >> y;
+
+    // Calcular las coordenadas polares
+    r = sqrt(x*x + y*y);
+    theta = atan2(y, x);
+
+    // Mostrar los resultados
+    cout << "Coordenadas rectangulares: (" << x << ", " << y << ")" << endl;
+    cout << "Coordenadas polares: (r=" << r << ", theta=" << theta << " rad)" << endl;
+
+    return 0;
+}
+Distancia entre dos puntos
+ Radianes a grados
+ Coordenadas rectangulares a coordenadas polares
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double radianes, grados;
+
+    cout << "Ingrese el valor en radianes: ";
+    cin >> radianes;
+
+    // Convertir radianes a grados
+    grados = radianes * (180.0 / M_PI);
+
+    cout << "El valor en grados es: " << grados << endl;
+
+    return 0;
+}
+ #include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double r, theta, x, y;
+    
+    // Pedir al usuario el valor de r y theta
+    cout << "Ingrese el valor de r: ";
+    cin >> r;
+    cout << "Ingrese el valor de theta en grados: ";
+    cin >> theta;
+    
+    // Convertir theta a radianes
+    theta = theta * M_PI / 180;
+    
+    // Convertir coordenadas polares a coordenadas rectangulares
+    x = r * cos(theta);
+    y = r * sin(theta);
+    
+    // Mostrar el resultado
+    cout << "Las coordenadas rectangulares son (" << x << ", " << y << ")" << endl;
+    
+    return 0;
+}
+Coordenadas esféricas a coordenadas cilíndricas
+ Coordenadas cilíndricas a coordenadas esféricas
+Coordenadas polares a coordenadas rectangulares
+ #include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    // Declaramos las variables
+    double r, theta, phi, x, y, z;
+
+    // Pedimos las coordenadas esféricas
+    cout << "Introduce el radio (r): ";
+    cin >> r;
+    cout << "Introduce el ángulo polar (theta) en grados: ";
+    cin >> theta;
+    cout << "Introduce el ángulo azimutal (phi) en grados: ";
+    cin >> phi;
+
+    // Convertimos los ángulos a radianes
+    theta = theta * M_PI / 180.0;
+    phi = phi * M_PI / 180.0;
+
+    // Convertimos las coordenadas esféricas a cilíndricas
+    x = r * sin(theta) * cos(phi);
+    y = r * sin(theta) * sin(phi);
+    z = r * cos(theta);
+
+    // Mostramos las coordenadas cilíndricas
+    cout << "Coordenadas cilindricas: (" << x << ", " << y << ", " << z << ")" << endl;
+
+    return 0;
+}
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+   double r, theta, z;
+   double rho, phi, psi;
+
+   // obtener coordenadas cilíndricas del usuario
+   cout << "Ingrese r, theta y z: ";
+   cin >> r >> theta >> z;
+
+   // convertir coordenadas cilíndricas a coordenadas esféricas
+   rho = sqrt(r*r + z*z);
+   phi = atan2(r, z);
+   psi = theta;
+
+   // imprimir las coordenadas esféricas
+   cout << "Coordenadas esféricas: " << endl;
+   cout << "rho = " << rho << endl;
+   cout << "phi = " << phi << endl;
+   cout << "psi = " << psi << endl;
+
+   return 0;
+}
